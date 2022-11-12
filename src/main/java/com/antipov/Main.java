@@ -1,22 +1,16 @@
 package com.antipov;
+import com.antipov.Car;
+import com.antipov.CarService;
+
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Antipov Volodymyr");
-
-        int y = 5;
-        for (
-                int i = 0;
-                i < 11; i = i + 1, y = y + 2) {
-            System.out.print("Крок: " + i + " Значення: ");
-            System.out.println(y);
-        }
-        for (int i = 0; i < 11; i = i + 1) {
-            if (i == 3)
-                continue;
-            if (i == 6)
-                break;
-            System.out.println(i + " Крок");
-        }
+        CarService carService = new CarService();
+        Car car1 = carService.create();
+        Car car2 = carService.create();
+        Car car3 = carService.create();
+        CarService.print(car1);
+        CarService.print(car2);
+        CarService.print(car3);
     }
 }
